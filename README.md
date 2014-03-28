@@ -3,6 +3,7 @@
 
 > Yeoman generator for Codeigniter - lets you quickly set up a project with sensible defaults and best practices.
 
+Maintainer: [Steven Britton](https://github.com/stevebritton)
 
 ## Usage
 
