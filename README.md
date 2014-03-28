@@ -1,6 +1,7 @@
-# Codeigniter Generator- [![Build Status](https://secure.travis-ci.org/stevebritton/generator-codeigniter.png?branch=master)](https://travis-ci.org/stevebritton/generator-codeigniter) ![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Codeigniter Generator
+[![Build Status](https://secure.travis-ci.org/stevebritton/generator-codeigniter.png?branch=master)] (https://travis-ci.org/stevebritton/generator-codeigniter) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![devDependency Status](https://david-dm.org/stevebritton/generator-codeigniter/dev-status.png)](https://david-dm.org/stevebritton/generator-codeigniter#info=devDependencies)
 
-> Yeoman generator for Codeigniter - lets you quickly set up a project with sensible defaults and best practises.
+> Yeoman generator for Codeigniter - lets you quickly set up a project with sensible defaults and best practices.
 
 
 ## Usage
@@ -10,7 +11,7 @@
 $ npm install -g yo
 ```
 
-Install `generator-angular`:
+Install `generator-codeigniter`:
 ```
 npm install -g generator-codeigniter
 ```
