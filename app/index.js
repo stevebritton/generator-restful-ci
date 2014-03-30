@@ -167,6 +167,7 @@ CodeigniterGenerator.prototype.app = function app() {
 
     this.mkdir('app');
     this.mkdir('app/web');
+
     this.mkdir('app/web/scripts');
     this.mkdir('app/web/styles');
     this.mkdir('app/web/images');
