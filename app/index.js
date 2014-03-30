@@ -126,7 +126,7 @@ CodeigniterGenerator.prototype.Codeigniter = function Codeigniter() {
 
 CodeigniterGenerator.prototype.mainStylesheet = function mainStylesheet() {
     var css = 'main.' + (this.includeCompass ? 's' : '') + 'css';
-    this.copy(css, '/app/web/styles/' + css);
+    this.copy(css, 'app/web/styles/' + css);
 };
 
 CodeigniterGenerator.prototype.writeIndex = function writeIndex() {
