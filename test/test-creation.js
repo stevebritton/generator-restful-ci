@@ -25,7 +25,7 @@ describe('codeigniter generator', function() {
         ];
 
         helpers.mockPrompt(this.app, {
-            'someOption': true
+            features: ['includeCompass']
         });
         this.app.options['skip-install'] = true;
         this.app.run({}, function() {
