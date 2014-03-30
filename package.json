@@ -4,10 +4,7 @@
     "description": "A generator for Yeoman, this generator creates a CodeIgniter backend with bower options.",
     "license": "MIT",
     "main": "app/index.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/stevebritton/generator-codeigniter.git"
-    },
+    "repository": "stevebritton/generator-codeigniter",
     "author": {
         "name": "Steven Britton",
         "email": "",
