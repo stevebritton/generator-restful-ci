@@ -15,7 +15,7 @@
         "npm": ">=1.2.10"
     },
     "scripts": {
-        "test": "mocha"
+        "test": "mocha --reporter spec"
     },
     "files": [
         "app"
@@ -28,7 +28,6 @@
         "grunt",
         "bootstrap",
         "sass"
-
     ],
     "dependencies": {
         "yeoman-generator": "~0.16.0",
