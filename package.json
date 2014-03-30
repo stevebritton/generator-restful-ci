@@ -1,35 +1,46 @@
 {
-  "name": "generator-codeigniter",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
-  "license": "MIT",
-  "main": "app/index.js",
-  "repository": "stevebritton/generator-codeigniter",
-  "author": {
-    "name": "Steven Britton",
-    "email": "",
-    "url": "https://github.com/stevebritton"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "files": [
-    "app"
-  ],
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "dependencies": {
-    "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0"
-  },
-  "devDependencies": {
-    "mocha": "*"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
-  }
+    "name": "generator-codeigniter",
+    "version": "0.0.1",
+    "description": "A generator for Yeoman, this generator creates a CodeIgniter backend with bower options.",
+    "license": "MIT",
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/stevebritton/generator-codeigniter.git"
+    },
+    "author": {
+        "name": "Steven Britton",
+        "email": "",
+        "url": "https://github.com/stevebritton"
+    },
+    "engines": {
+        "node": ">=0.10.0",
+        "npm": ">=1.4.6"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "files": [
+        "app"
+    ],
+    "keywords": [
+        "yeoman-generator",
+        "codeigniter",
+        "modernizr",
+        "jquery",
+        "grunt",
+        "bootstrap",
+        "sass"
+
+    ],
+    "dependencies": {
+        "yeoman-generator": "~0.16.0",
+        "chalk": "~0.4.0"
+    },
+    "devDependencies": {
+        "mocha": "*"
+    },
+    "peerDependencies": {
+        "yo": ">=1.0.0"
+    }
 }
