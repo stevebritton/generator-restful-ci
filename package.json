@@ -1,15 +1,30 @@
 {
-    "name": "generator-codeigniter",
+    "name": "generator-restful-ci",
     "version": "0.0.1",
-    "description": "A generator for Yeoman, this generator creates a CodeIgniter backend with bower options.",
-    "license": "MIT",
-    "main": "app/index.js",
-    "repository": "stevebritton/generator-codeigniter",
+    "description": "Yeoman generator for a Restful CodeIgniter backend with lots options.",
+    "keywords": [
+        "yeoman-generator",
+        "codeigniter",
+        "restful",
+        "modernizr",
+        "jquery",
+        "grunt",
+        "bootstrap",
+        "sass"
+    ],
+    "homepage": "https://github.com/stevebritton/generator-restful-ci",
+    "bugs": "https://github.com/stevebritton/generator-restful-ci/issues",
     "author": {
         "name": "Steven Britton",
         "email": "",
         "url": "https://github.com/stevebritton"
     },
+    "main": "app/index.js",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/stevebritton/generator-restful-ci.git"
+      },   
     "engines": {
         "node": ">=0.10.0",
         "npm": ">=1.2.10"
@@ -20,15 +35,7 @@
     "files": [
         "app"
     ],
-    "keywords": [
-        "yeoman-generator",
-        "codeigniter",
-        "modernizr",
-        "jquery",
-        "grunt",
-        "bootstrap",
-        "sass"
-    ],
+    
     "dependencies": {
         "yeoman-generator": "~0.16.0",
         "chalk": "~0.4.0"
