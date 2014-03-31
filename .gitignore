@@ -1,3 +1,14 @@
+.DS_Store
+Thumbs.db
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
 node_modules/
 dist
 .tmp
