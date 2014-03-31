@@ -22,9 +22,9 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo codeigniter`, optionally passing an app name:
+Run `yo restful-ci`, optionally passing an app name:
 ```
-yo codeigniter [app-name]
+yo restful-ci [app-name]
 ```
 
 Run `grunt` for building and `grunt serve` for preview
