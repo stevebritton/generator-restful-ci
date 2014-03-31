@@ -2,7 +2,7 @@
 'use strict';
 var assert = require('assert');
 
-describe('codeigniter generator', function () {
+describe('restful-ci generator', function () {
   it('can be imported without blowing up', function () {
     var app = require('../app');
     assert(app !== undefined);
