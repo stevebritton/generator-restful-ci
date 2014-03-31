@@ -37,8 +37,7 @@
         "mocha": "*"
     },
     "peerDependencies": {
-        
-        "generator-mocha":">="0.1.1",
-         "yo": ">=1.0.0",
+         "generator-mocha":">=0.1.1",
+         "yo": ">=1.0.0"
     }
 }
