@@ -1,5 +1,5 @@
 # Codeigniter Generator
-[![Build Status](https://secure.travis-ci.org/stevebritton/generator-codeigniter.png?branch=master)] (https://travis-ci.org/stevebritton/generator-codeigniter) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![devDependency Status](https://david-dm.org/stevebritton/generator-codeigniter/dev-status.png)](https://david-dm.org/stevebritton/generator-codeigniter#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/stevebritton/generator-restful-ci.png?branch=master)] (https://travis-ci.org/stevebritton/generator-restful-ci) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![devDependency Status](https://david-dm.org/stevebritton/generator-restful-ci/dev-status.png)](https://david-dm.org/stevebritton/generator-restful-ci#info=devDependencies)
 
 > Yeoman generator for Codeigniter - lets you quickly set up a project with sensible defaults and best practices.
 
@@ -12,9 +12,9 @@ Maintainer: [Steven Britton](https://github.com/stevebritton)
 $ npm install -g yo
 ```
 
-Install `generator-codeigniter`:
+Install `generator-restful-ci`:
 ```
-npm install -g generator-codeigniter
+npm install -g generator-restful-ci
 ```
 
 Make a new directory, and `cd` into it:
@@ -38,16 +38,16 @@ Run `grunt` for building and `grunt serve` for preview
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-codeigniter from npm, run:
+To install generator-restful-ci from npm, run:
 
 ```
-$ npm install -g generator-codeigniter
+$ npm install -g generator-restful-ci
 ```
 
 Finally, initiate the generator:
 
 ```
-$ yo codeigniter
+$ yo restful-ci
 ```
 
 ### Getting To Know Yeoman
