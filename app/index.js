@@ -8,7 +8,7 @@ var chalk = require('chalk');
 
 
 
-var CodeigniterGenerator = module.exports = function CodeigniterGenerator(args, options, config) {
+var RestfulCiGenerator = module.exports = function RestfulCiGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
 
     // setup the test-framework property, Gruntfile template will need this
@@ -35,9 +35,9 @@ var CodeigniterGenerator = module.exports = function CodeigniterGenerator(args, 
 };
 
 
-util.inherits(CodeigniterGenerator, yeoman.generators.Base);
+util.inherits(RestfulCiGenerator, yeoman.generators.Base);
 
-CodeigniterGenerator.prototype.askFor = function askFor() {
+RestfulCiGenerator.prototype.askFor = function askFor() {
 
     var done = this.async();
 
@@ -85,51 +85,51 @@ CodeigniterGenerator.prototype.askFor = function askFor() {
 };
 
 
-CodeigniterGenerator.prototype.gruntfile = function gruntfile() {
+RestfulCiGenerator.prototype.gruntfile = function gruntfile() {
     this.template('Gruntfile.js');
 };
 
-CodeigniterGenerator.prototype.packageJSON = function packageJSON() {
+RestfulCiGenerator.prototype.packageJSON = function packageJSON() {
     this.template('_package.json', 'package.json');
 };
 
-CodeigniterGenerator.prototype.git = function git() {
+RestfulCiGenerator.prototype.git = function git() {
     this.copy('gitignore', '.gitignore');
     this.copy('gitattributes', '.gitattributes');
 };
 
-CodeigniterGenerator.prototype.bower = function bower() {
+RestfulCiGenerator.prototype.bower = function bower() {
     this.copy('bowerrc', '.bowerrc');
     this.copy('_bower.json', 'bower.json');
 };
 
-CodeigniterGenerator.prototype.jshint = function jshint() {
+RestfulCiGenerator.prototype.jshint = function jshint() {
     this.copy('jshintrc', '.jshintrc');
 };
 
-CodeigniterGenerator.prototype.editorConfig = function editorConfig() {
+RestfulCiGenerator.prototype.editorConfig = function editorConfig() {
     this.copy('editorconfig', '.editorconfig');
 };
 
-CodeigniterGenerator.prototype.h5bp = function h5bp() {
+RestfulCiGenerator.prototype.h5bp = function h5bp() {
     this.copy('favicon.ico', 'app/favicon.ico');
     this.copy('404.html', 'app/404.html');
     this.copy('robots.txt', 'app/robots.txt');
     this.copy('htaccess', 'app/.htaccess');
 };
 
-CodeigniterGenerator.prototype.Codeigniter = function Codeigniter() {
+RestfulCiGenerator.prototype.Codeigniter = function Codeigniter() {
     this.directory('codeigniter/application', 'app/application');
     this.directory('codeigniter/system', 'app/system');
     this.copy('codeigniter/index.php', 'app/index.php');
 };
 
-CodeigniterGenerator.prototype.mainStylesheet = function mainStylesheet() {
+RestfulCiGenerator.prototype.mainStylesheet = function mainStylesheet() {
     var css = 'main.' + (this.includeCompass ? 's' : '') + 'css';
     this.copy(css, 'app/web/styles/' + css);
 };
 
-CodeigniterGenerator.prototype.writeIndex = function writeIndex() {
+RestfulCiGenerator.prototype.writeIndex = function writeIndex() {
 
     this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'index.html'));
     this.indexFile = this.engine(this.indexFile, this);
@@ -163,7 +163,7 @@ CodeigniterGenerator.prototype.writeIndex = function writeIndex() {
 };
 
 
-CodeigniterGenerator.prototype.app = function app() {
+RestfulCiGenerator.prototype.app = function app() {
 
     this.mkdir('app');
     this.mkdir('app/web');
@@ -184,7 +184,7 @@ CodeigniterGenerator.prototype.app = function app() {
     }
 };
 
-CodeigniterGenerator.prototype.install = function() {
+RestfulCiGenerator.prototype.install = function() {
     if (this.options['skip-install']) {
         return;
     }

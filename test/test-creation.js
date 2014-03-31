@@ -3,14 +3,14 @@
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('codeigniter generator', function() {
+describe('restful-ci generator', function() {
     beforeEach(function(done) {
         helpers.testDirectory(path.join(__dirname, 'temp'), function(err) {
             if (err) {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator('codeigniter:app', [
+            this.app = helpers.createGenerator('restful-ci:app', [
                 '../../app', [
                 helpers.createDummyGenerator(),
                 'mocha:app'
