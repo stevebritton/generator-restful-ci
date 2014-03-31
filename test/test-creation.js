@@ -11,7 +11,11 @@ describe('codeigniter generator', function() {
             }
 
             this.app = helpers.createGenerator('codeigniter:app', [
-                '../../app'
+                '../../app', [
+                helpers.createDummyGenerator(),
+                'mocha:app'
+                ]
+
             ]);
             done();
         }.bind(this));
