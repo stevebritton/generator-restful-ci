@@ -1,6 +1,6 @@
 {
     "name": "generator-restful-ci",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Yeoman generator for a Restful CodeIgniter backend with lots options.",
     "keywords": [
         "yeoman-generator",
