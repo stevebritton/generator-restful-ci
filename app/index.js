@@ -44,7 +44,7 @@ RestfulCiGenerator.prototype.askFor = function askFor() {
     // welcome message
     if (!this.options['skip-welcome-message']) {
         this.log(this.yeoman);
-        this.log(chalk.magenta('You\'re using the fantastic Codeigniter generator. Out of the box I include Codeigniter, jQuery, and a Gruntfile.js to build your app.'));
+        this.log(chalk.magenta('You\'re using the fantastic Restful Codeigniter generator. Out of the box I include Codeigniter, jQuery, and a Gruntfile.js to build your app.'));
     }
 
 
