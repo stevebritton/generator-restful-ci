@@ -23,10 +23,11 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo restful-ci`, optionally passing an app name:
+Run `yo restful-ci`
 ```
-yo restful-ci [app-name]
+yo restful-ci
 ```
+![image](http://seomention.com/projects/yo-restful-ci/yo-restful-ci.png)
 
 Run `grunt` for building and `grunt serve` for preview
 
