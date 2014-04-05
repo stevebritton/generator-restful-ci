@@ -1,4 +1,4 @@
-# Restful Codeigniter Generator
+# Restful CodeIgniter Generator
 [![Build Status](https://secure.travis-ci.org/stevebritton/generator-restful-ci.png?branch=master)](https://travis-ci.org/stevebritton/generator-restful-ci) [![NPM version](https://badge.fury.io/js/generator-restful-ci.png)](http://badge.fury.io/js/generator-restful-ci)
 [![devDependency Status](https://david-dm.org/stevebritton/generator-restful-ci/dev-status.png)](https://david-dm.org/stevebritton/generator-restful-ci#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
