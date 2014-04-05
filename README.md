@@ -10,7 +10,7 @@ Maintainer: [Steven Britton](https://github.com/stevebritton)
 
 I started this project to really wrap my head around some of the emerging technologies(tools, workflows, and such) and since I use CodeIgniter for various projects, why not create a solid workflow using this well established framework, right?
 
-### Tools included in this project include: ###
+### Tools included in this project: ###
 - CodeIgniter
 - [Philsturgeon's](https://github.com/wesleytodd) awesome [RESTful Server](https://github.com/philsturgeon/codeigniter-restserver)
 - [Jamierumbelow's](https://github.com/jamierumbelow) [CodeIgniter Base CRUD Model](https://github.com/jamierumbelow/codeigniter-base-model)
