@@ -8,18 +8,18 @@
         <title><%= appname %></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
+        <!-- build:css web/styles/vendor.css -->
         <!-- bower:css -->
-        <% if (includeBootstrap && !includeCompass) { %><link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"><% } %>
+        <% if (includeBootstrap && !includeCompass) { %><link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"><% } %>
         <!-- endbower -->
         <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:css(.tmp) web/styles/main.css -->
+        <link rel="stylesheet" href="web/styles/main.css">
         <!-- endbuild --><% if (includeModernizr) { %>
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- build:js web/scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
         <% } %>
     </head>
@@ -80,9 +80,9 @@
         </div>
         <% } %>
 
-        <!-- build:js scripts/vendor.js -->
+        <!-- build:js web/scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

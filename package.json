@@ -24,7 +24,7 @@
     "repository": {
         "type": "git",
         "url": "git://github.com/stevebritton/generator-restful-ci.git"
-      },   
+    },
     "engines": {
         "node": ">=0.10.0",
         "npm": ">=1.2.10"
@@ -35,16 +35,19 @@
     "files": [
         "app"
     ],
-    
+
     "dependencies": {
         "yeoman-generator": "~0.16.0",
-        "chalk": "~0.4.0"
+        "wrench": "~1.4.4",
+        "chalk": "~0.4.0",
+        "simple-git": "~0.2.0",
+        "mkdirp": "~0.3.5"
     },
     "devDependencies": {
         "mocha": "*"
     },
     "peerDependencies": {
-         "generator-mocha":">=0.1.1",
-         "yo": ">=1.0.0"
+        "generator-mocha": ">=0.1.1",
+        "yo": ">=1.0.0"
     }
 }
