@@ -22,6 +22,13 @@ module.exports = function(advanced, defaults) {
         },
 
         {
+            message: 'What about your web assets directory?',
+            name: 'assetsDir',
+            default: defaults.assetsDir || 'assets',
+            validate: requiredValidate,
+        },
+
+        {
             type: 'checkbox',
             name: 'features',
             message: 'What more would you like?',

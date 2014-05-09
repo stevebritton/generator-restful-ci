@@ -15,11 +15,12 @@ var https = require('https'),
 //ToDo: pull this down from the interwebs
 function installCodeIgniter(generator, config) {
 
-    var done = generator.async();
+    var done = generator.async(),
+        cdDirectory = 'app/' + config.ciDir;
 
-    generator.directory('codeigniter/application', config.ciDir + '/application');
-    generator.directory('codeigniter/system', config.ciDir + '/system');
-    generator.copy('codeigniter/index.php', config.ciDir + '/index.php');
+    generator.directory('codeigniter/application', cdDirectory + '/application');
+    generator.directory('codeigniter/system', cdDirectory + '/system');
+    generator.copy('codeigniter/index.php', cdDirectory + '/index.php');
 
     done();
 

@@ -19,7 +19,8 @@ module.exports = function (grunt) {
     // Configurable paths
     var config = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        assetsDir : '<%=assetsDir %>'
     };
 
     // Define the configuration for all the tasks
@@ -35,7 +36,7 @@ module.exports = function (grunt) {
                 tasks: ['bowerInstall']
             },<%if (coffee){ %>
             coffee: {
-                files: ['<%%= config.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+                files: ['<%%= config.app %>/<%%= config.assetsDir %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
                 tasks: ['coffee:dist']
             },                
             coffeeTest: {
@@ -43,7 +44,7 @@ module.exports = function (grunt) {
                 tasks: ['coffee:test', 'test:watch']
             }, <% } else { %>
             js: {
-                files: ['<%%= config.app %>/scripts/{,*/}*.js'],
+                files: ['<%%= config.app %>/<%%= config.assetsDir %>/scripts/{,*/}*.js'],
                 tasks: ['jshint'],
                 options: {
                     livereload: true
@@ -57,11 +58,11 @@ module.exports = function (grunt) {
                 files: ['Gruntfile.js']
             },<%if (includeCompass) { %>
             compass: {
-                files: ['<%%= config.app %>/web/styles/{,*/}*.{scss,sass}'],
+                files: ['<%%= config.app %>/<%%= config.assetsDir %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer']
             },<% } %>
             styles: {
-                files: ['<%%= config.app %>/web/styles/{,*/}*.css'],
+                files: ['<%%= config.app %>/<%%= config.assetsDir %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
             livereload: {
@@ -70,9 +71,9 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '<%%= config.app %>/{,*/}*.html',
-                    '.tmp/web/styles/{,*/}*.css',<% if (coffee) { %>
-                    '.tmp/web/scripts/{,*/}*.js',<% } %>
-                    '<%%= config.app %>/images/{,*/}*'
+                    '.tmp/<%%= config.assetsDir %>/styles/{,*/}*.css',<% if (coffee) { %>
+                    '.tmp/<%%= config.assetsDir %>/scripts/{,*/}*.js',<% } %>
+                    '<%%= config.app %>/<%%= config.assetsDir %>/images/{,*/}*'
                 ]
             }
         },
@@ -142,8 +143,8 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%%= config.app %>/web/scripts/{,*/}*.js',
-                '!<%%= config.app %>/web/scripts/vendor/*',
+                '<%%= config.app %>/<%%= config.assetsDir %>/scripts/{,*/}*.js',
+                '!<%%= config.app %>/<%%= config.assetsDir %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
         },
@@ -176,7 +177,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%%= config.app %>/web/scripts',
+                    cwd: '<%%= config.app %>/<%%= config.assetsDir %>/scripts',
                     src: '{,*/}*.{coffee,litcoffee,coffee.md}',
                     dest: '.tmp/scripts',
                     ext: '.js'
@@ -198,22 +199,22 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         compass: {
             options: {
-                sassDir: '<%%= config.app %>/web/styles',
-                cssDir: '.tmp/web/styles',
-                generatedImagesDir: '.tmp/web/images/generated',
-                imagesDir: '<%%= config.app %>/web/images',
-                javascriptsDir: '<%%= config.app %>/web/scripts',
-                fontsDir: '<%%= config.app %>/web/styles/fonts',
+                sassDir: '<%%= config.app %>/<%%= config.assetsDir %>/styles',
+                cssDir: '.tmp/<%%= config.assetsDir %>/styles',
+                generatedImagesDir: '.tmp/<%%= config.assetsDir %>/images/generated',
+                imagesDir: '<%%= config.app %>/<%%= config.assetsDir %>/images',
+                javascriptsDir: '<%%= config.app %>/<%%= config.assetsDir %>/scripts',
+                fontsDir: '<%%= config.app %>/<%%= config.assetsDir %>/styles/fonts',
                 importPath: '<%%= config.app %>/bower_components',
-                httpImagesPath: '<%%= config.dist %>/web/images',
+                httpImagesPath: '<%%= config.dist %>/<%%= config.assetsDir %>/images',
                 httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '<%%= config.dist %>/web/styles/fonts',
+                httpFontsPath: '<%%= config.dist %>/<%%= config.assetsDir %>/styles/fonts',
                 relativeAssets: false,
                 assetCacheBuster: false
             },
             dist: {
                 options: {
-                    generatedImagesDir: '<%%= config.dist %>/web/images/generated'
+                    generatedImagesDir: '<%%= config.dist %>/<%%= config.assetsDir %>/images/generated'
                 }
             },
             server: {
@@ -233,9 +234,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '.tmp/web/styles/',
+                    cwd: '.tmp/<%%= config.assetsDir %>/styles/',
                     src: '{,*/}*.css',
-                    dest: '.tmp/web/styles/'
+                    dest: '.tmp/<%%= config.assetsDir %>/styles/'
                 }]
             }
         },
@@ -249,7 +250,7 @@ module.exports = function (grunt) {
                 exclude: ['<%%= config.app %>/bower_components/bootstrap/dist/js/bootstrap.js']<% } %>
             }<%if (includeCompass) { %>,
             sass: {
-                src: ['<%%= config.app %>/web/styles/{,*/}*.{scss,sass}'],
+                src: ['<%%= config.app %>/<%%= config.assetsDir %>/styles/{,*/}*.{scss,sass}'],
                 ignorePath: '<%%= config.app %>/bower_components/'
             }<% } %>
         },
@@ -259,10 +260,9 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%%= config.dist %>/web/scripts/{,*/}*.js',
-                        '<%%= config.dist %>/web/styles/{,*/}*.css',
-                        '<%%= config.dist %>/web/images/{,*/}*.*',
-                        //'<%%= config.dist %>/web/styles/fonts/{,*/}*.*',
+                        '<%%= config.dist %>/<%%= config.assetsDir %>/scripts/{,*/}*.js',
+                        '<%%= config.dist %>/<%%= config.assetsDir %>/styles/{,*/}*.css',
+                        '<%%= config.dist %>/<%%= config.assetsDir %>/images/{,*/}*.*',
                         '<%%= config.dist %>/*.{ico,png}'
                     ]
                 }
@@ -282,10 +282,10 @@ module.exports = function (grunt) {
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             options: {
-                assetsDirs: ['<%%= config.dist %>', '<%%= config.dist %>/images']
+                assetsDirs: ['<%%= config.dist %>', '<%%= config.dist %>/<%%= config.assetsDir %>/images']
             },
             html: ['<%%= config.dist %>/{,*/}*.html'],
-            css: ['<%%= config.dist %>/web/styles/{,*/}*.css']
+            css: ['<%%= config.dist %>/<%%= config.assetsDir %>/styles/{,*/}*.css']
         },
 
         // The following *-min tasks produce minified files in the dist folder
@@ -293,9 +293,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%%= config.app %>/images',
+                    cwd: '<%%= config.app %>/<%%= config.assetsDir %>/images',
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%%= config.dist %>/images'
+                    dest: '<%%= config.dist %>/<%%= config.assetsDir %>/images'
                 }]
             }
         },
@@ -304,9 +304,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%%= config.app %>/images',
+                    cwd: '<%%= config.app %>/<%%= config.assetsDir %>/images',
                     src: '{,*/}*.svg',
-                    dest: '<%%= config.dist %>/images'
+                    dest: '<%%= config.dist %>/<%%= config.assetsDir %>/images'
                 }]
             }
         },
@@ -371,7 +371,7 @@ module.exports = function (grunt) {
                             '.htaccess',
                             'images/{,*/}*.webp',
                             '{,*/}*.html',
-                            'web/styles/fonts/{,*/}*.*'
+                            '<%%= config.assetsDir %>/styles/fonts/{,*/}*.*'
                         ]
                     }<%if (includeBootstrap) { %>,
                     {
@@ -381,22 +381,22 @@ module.exports = function (grunt) {
                         src: ['*.*'],<%} else { %>
                         cwd: '<%%= config.app %>/bower_components/bootstrap/dist/fonts/',
                         src: ['*.*'],<% } %>
-                        dest: '<%%= config.dist %>/web/styles/fonts/'
+                        dest: '<%%= config.dist %>/<%%= config.assetsDir %>/styles/fonts/'
                     }<% } if (includeFontAwesome) { %>,
                     {
                         expand: true,
                         dot: true,
                         cwd: '<%%= config.app %>/bower_components/font-awesome/fonts',
                         src: ['*.*'],
-                        dest: '<%%= config.dist %>/web/styles/fonts/'
+                        dest: '<%%= config.dist %>/<%%= config.assetsDir %>/styles/fonts/'
                     }<%} %>
                 ]
                 },
                 styles: {
                     expand: true,
                     dot: true,
-                    cwd: '<%%= config.app %>/web/styles',
-                    dest: '.tmp/web/styles/',
+                    cwd: '<%%= config.app %>/<%%= config.assetsDir %>/styles',
+                    dest: '.tmp/<%%= config.assetsDir %>/styles/',
                     src: '{,*/}*.css'
                 }
             },
@@ -408,12 +408,12 @@ module.exports = function (grunt) {
             modernizr: {
                 dist: {
                     devFile: '<%%= config.app %>/bower_components/modernizr/modernizr.js',
-                    outputFile: '<%%= config.dist %>/web/scripts/vendor/modernizr.js',
+                    outputFile: '<%%= config.dist %>/<%%= config.assetsDir %>/scripts/vendor/modernizr.js',
                     files: {
                         src: [
-                            '<%%= config.dist %>/web/scripts/{,*/}*.js',
-                            '<%%= config.dist %>/web/styles/{,*/}*.css',
-                            '!<%%= config.dist %>/web/scripts/vendor/*'
+                            '<%%= config.dist %>/<%%= config.assetsDir %>/scripts/{,*/}*.js',
+                            '<%%= config.dist %>/<%%= config.assetsDir %>/styles/{,*/}*.css',
+                            '!<%%= config.dist %>/<%%= config.assetsDir %>/scripts/vendor/*'
                         ]
                     },
                     uglify: true

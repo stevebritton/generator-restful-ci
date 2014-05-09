@@ -119,7 +119,7 @@ Generator.prototype.whatCanYoemanDoForYou = function() {
 
                     //Place user defined CodeIgniter directory in the app folder
                     //ToDo: create gloabl variable and set this in the Util/CodeIgniter file
-                    input.ciDir = 'app/' + input.ciDir
+                    //input.ciDir = 'app/' + input.ciDir
 
                     //Get CodeIgniter files
                     //ToDo: pull down from the interwebs
@@ -133,6 +133,7 @@ Generator.prototype.whatCanYoemanDoForYou = function() {
                     }
 
                     //ToDo: automate this based on what's being promted
+                    me.assetsDir = input.assetsDir;
                     me.includeCompass = hasFeature('includeCompass');
                     me.includeBootstrap = hasFeature('includeBootstrap');
                     me.includeFontAwesome = hasFeature('includeFontAwesome');
@@ -151,7 +152,7 @@ Generator.prototype.whatCanYoemanDoForYou = function() {
                     me.logger.log('YO, CodeIgniter is now installed!');
 
                 } else {
-                    console.log();
+                   
                     getInput();
                 }
             });
@@ -207,7 +208,7 @@ Generator.prototype.createIndexFile = function() {
     // wire Bootstrap plugins
     if (this.includeBootstrap) {
         var bs = 'bower_components/bootstrap' + (this.includeCompass ? '-sass-official/vendor/assets/javascripts/bootstrap/' : '/js/');
-        this.indexFile = this.appendScripts(this.indexFile, 'web/scripts/plugins.js', [
+        this.indexFile = this.appendScripts(this.indexFile, this.assetsDir + '/scripts/plugins.js', [
             bs + 'affix.js',
             bs + 'alert.js',
             bs + 'dropdown.js',
@@ -226,35 +227,39 @@ Generator.prototype.createIndexFile = function() {
     this.indexFile = this.appendFiles({
         html: this.indexFile,
         fileType: 'js',
-        optimizedPath: 'web/scripts/main.js',
-        sourceFileList: ['web/scripts/main.js'],
+        optimizedPath: this.assetsDir + '/scripts/main.js',
+        sourceFileList: [this.assetsDir + '/scripts/main.js'],
         searchPath: '{app,.tmp}'
     });
 };
 
 Generator.prototype.mainStylesheet = function() {
     var css = 'main.' + (this.includeCompass ? 's' : '') + 'css';
-    this.copy(css, 'app/web/styles/' + css);
+    this.copy(css, 'app/'+this.assetsDir+'/styles/' + css);
 };
 
 Generator.prototype.app = function() {
 
     this.mkdir('app');
-    this.mkdir('app/web');
+    this.mkdir('app/' + this.assetsDir);
 
-    this.mkdir('app/web/scripts');
-    this.mkdir('app/web/styles');
-    this.mkdir('app/web/images');
+    this.mkdir('app/'+this.assetsDir+'/scripts');
+    this.mkdir('app/'+this.assetsDir+'/styles');
+    this.mkdir('app/'+this.assetsDir+'/images');
+
+    //this.copy('yo-restful-ci.png', 'app/'+this.assetsDir+'/images/yo-restful-ci.png');
+
+    
 
     this.write('app/index.html', this.indexFile);
 
     if (this.coffee) {
         this.write(
-            'app/scripts/main.coffee',
+            'app/'+this.assetsDir+'/scripts/main.coffee',
             'console.log "\'Allo from CoffeeScript!"'
         );
     } else {
-        this.write('app/web/scripts/main.js', 'console.log(\'\\\'Allo \\\'Allo!\');');
+        this.write('app/'+this.assetsDir+'/scripts/main.js', 'console.log(\'\\\'Allo \\\'Allo!\');');
     }
 };
 
